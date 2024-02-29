@@ -37,9 +37,14 @@ body {
   align-items: center;
 }
 
-.cell:hover {
-  
+.cell:hover,
+.cell-clicked {
+  background-color: rgb(157, 197, 199);
 }
 
 .num {
+}
+
+.check{
+  cursor: pointer;
 }
