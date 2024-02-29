@@ -1,11 +1,9 @@
 const grid = document.querySelector('.grid');
 const playButton = document.querySelector('.play');
 
-
 const totalCells = 100;
 /* const totalCells = 81; */
 /* const totalCells = 49; */
-
 
 playButton.addEventListener('click', play);
 
