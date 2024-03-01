@@ -12,23 +12,22 @@ function play(){
   for(let i = 1; i <= totalCells; i++){
     /* console.log(i); */
     const cell = document.createElement('div');
-    cell.innerHTML += `<div class="num">${[i]}</div>`;
     cell.classList.add('cell');
-    cell.classList.add('check');
+    /* cell.classList.add('check'); */
+    cell.innerHTML += `<div class="num">${[i]}</div>`;
     
+    cell.addEventListener('click', function () {
+      // ! Controllo che la cella non sia stata già cliccata
+      if (cell.classList.contains('cell-clicked')) return;
+    
+      // Se non lo è...
+      cell.classList.add('cell-clicked');
+      
+      let numElement = this.querySelector('.num');
+      let num = numElement.textContent;
+      console.log(num);
+    });
+  
     grid.appendChild(cell);
   }
-}
-
-const checkButton = document.querySelector('.check');
-checkButton.addEventListener('click', check);
-
-// Seleziona l'elemento con la classe "num"
-let numElement = document.querySelector('.num');
-
-// Leggi il contenuto testuale dell'elemento
-let num = numElement.textContent;
-
-function check(){
-  console.log(num);
 }
